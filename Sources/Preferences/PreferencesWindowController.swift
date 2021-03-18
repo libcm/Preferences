@@ -4,7 +4,7 @@ extension NSWindow.FrameAutosaveName {
 	static let preferences: NSWindow.FrameAutosaveName = "com.sindresorhus.Preferences.FrameAutosaveName"
 }
 
-public final class PreferencesWindowController: NSWindowController {
+open class PreferencesWindowController: NSWindowController {
 	private let tabViewController = PreferencesTabViewController()
 
 	public var isAnimated: Bool {
@@ -84,7 +84,7 @@ public final class PreferencesWindowController: NSWindowController {
 	- See `close()` to close the window again.
 	- See `showWindow(_:)` to show the window without the convenience of activating the app.
 	*/
-	public func show(preferencePane preferenceIdentifier: PreferencePane.Identifier? = nil) {
+	open func show(preferencePane preferenceIdentifier: PreferencePane.Identifier? = nil) {
 		if let preferenceIdentifier = preferenceIdentifier {
 			tabViewController.activateTab(preferenceIdentifier: preferenceIdentifier, animated: false)
 		} else {
